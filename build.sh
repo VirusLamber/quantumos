@@ -19,8 +19,7 @@ lb config \
   --bootappend-live "boot=live components hostname=quantumos username=quantum" \
   --iso-volume "QuantumOS 1.0" \
   --iso-application "QuantumOS" \
-  --iso-publisher "QuantumOS Project" \
-  --image-name "quantumos-1.0-amd64"
+  --iso-publisher "QuantumOS Project"
 
 # Copy our config into the build dir
 cp -r "$SCRIPT_DIR/config/"* "$BUILD_DIR/config/"
