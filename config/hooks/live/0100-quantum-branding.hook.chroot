@@ -1,0 +1,40 @@
+#!/bin/bash
+# QuantumOS branding hook — runs inside chroot during build
+
+set -e
+
+# Set hostname
+echo "quantumos" > /etc/hostname
+
+# Custom MOTD
+cat > /etc/motd << 'EOF'
+
+  ██████  ██    ██  █████  ███    ██ ████████ ██    ██ ███    ███  ██████  ███████
+ ██    ██ ██    ██ ██   ██ ████   ██    ██    ██    ██ ████  ████ ██    ██ ██
+ ██    ██ ██    ██ ███████ ██ ██  ██    ██    ██    ██ ██ ████ ██ ██    ██ ███████
+ ██ ▄▄ ██ ██    ██ ██   ██ ██  ██ ██    ██    ██    ██ ██  ██  ██ ██    ██      ██
+  ██████   ██████  ██   ██ ██   ████    ██     ██████  ██      ██  ██████  ███████
+     ▀▀
+
+  Welcome to QuantumOS 1.0
+  The future, distilled.
+
+EOF
+
+# Configure neofetch to show QuantumOS info
+mkdir -p /etc/skel/.config/neofetch
+cat > /etc/skel/.config/neofetch/config.conf << 'NEOFETCH'
+print_info() {
+    info title
+    info underline
+    info "OS" distro
+    info "Kernel" kernel
+    info "Uptime" uptime
+    info "Packages" packages
+    info "Shell" shell
+    info "CPU" cpu
+    info "Memory" memory
+}
+NEOFETCH
+
+echo "QuantumOS branding applied."

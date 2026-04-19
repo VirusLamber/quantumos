@@ -1,0 +1,9 @@
+NAME="QuantumOS"
+VERSION="1.0"
+ID=quantumos
+ID_LIKE=debian
+PRETTY_NAME="QuantumOS 1.0"
+VERSION_ID="1.0"
+HOME_URL="https://quantumos.local"
+SUPPORT_URL="https://quantumos.local/support"
+BUG_REPORT_URL="https://quantumos.local/bugs"

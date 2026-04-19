@@ -1,0 +1,13 @@
+# QuantumOS base packages
+bash
+coreutils
+systemd
+linux-image-amd64
+grub-pc
+network-manager
+sudo
+curl
+wget
+vim
+htop
+neofetch
